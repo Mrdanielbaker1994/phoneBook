@@ -15,7 +15,7 @@ Description:
 Parameters:
 Return Values:
 =================================================================================================*/
-bool validateName()
+bool validateName(struct phoneBook *newPerson)
 {
 
 	bool returnValue = false;
@@ -129,7 +129,7 @@ Description:
 Parameters:
 Return Values:
 =================================================================================================*/
-bool streetAddress()
+bool streetAddress(struct phoneBook *newPerson)
 {
 
 	bool returnValue = false;
@@ -222,7 +222,7 @@ Description:
 Parameters:
 Return Values:
 =================================================================================================*/
-bool cityValidation()
+bool cityValidation(struct phoneBook *newPerson)
 {
 
 	printf("Please enter a city: ");
@@ -278,7 +278,7 @@ Parameters:
 Return Values:
 =================================================================================================*/
 
-bool provinceValidation()
+bool provinceValidation(struct phoneBook *newPerson)
 {
 	bool returnValue = false;
 	int checkLength = 0;
@@ -350,7 +350,7 @@ bool provinceValidation()
 		{
 			if ((stricmp(provinces, provinceCodes[i])) == 0)
 			{
-				printf("%s", provinceCodes[i]);
+				strcpy(newPerson->province, provinceCodes[i]);
 				returnValue = true;
 			}
 		}
@@ -362,7 +362,7 @@ bool provinceValidation()
 			//check for short form names and also province names
 			if ((stricmp(provinces, provinceNames[i])) == 0 || (stricmp(provinces, provinceShortNames[i])) == 0)
 			{
-				printf("%s", provinceNames[i]);
+				strcpy(newPerson->province, provinceCodes[i]);
 				returnValue = true;
 			}
 		}
@@ -379,7 +379,7 @@ Parameters:
 Return Values:
 =================================================================================================*/
 
-bool postalCode()
+bool postalCode(struct phoneBook *newPerson)
 {
 	printf("Please enter a postal code: ");
 	char postalPassed[kExcessSize];
@@ -461,7 +461,7 @@ Description:
 Parameters:
 Return Values:
 =================================================================================================*/
-bool validatePhoneNumber()
+bool validatePhoneNumber(struct phoneBook *newPerson)
 {
 	bool returnValue = false;
 	int digitValidator = kInvalid;

@@ -24,13 +24,13 @@ int main()
 		//functions shall call the next function once in updates phonebook
 		// For now I'm having function calls in main just to make it easier on us
 		// for debugging purposes.
-		programFlow = validateName(newPerson);
-		programFlow = validateName(newPerson);
-		programFlow = streetAddress(newPerson);
-		programFlow = cityValidation(newPerson);
+		//programFlow = validateName(newPerson);
+		//programFlow = validateName(newPerson);
+		//programFlow = streetAddress(newPerson);
+		//programFlow = cityValidation(newPerson);
 		programFlow = provinceValidation(newPerson);
-		programFlow = postalCode(newPerson);
-		programFlow = validatePhoneNumber(newPerson);
+		//programFlow = postalCode(newPerson);
+		//programFlow = validatePhoneNumber(newPerson);
 
 		i++;
 	}

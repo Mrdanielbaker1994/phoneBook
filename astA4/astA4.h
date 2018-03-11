@@ -16,12 +16,12 @@ Description:
 /*STUCTS*/
 typedef struct phoneBook
 {
-	char* name[31];
-	char* street[61];
-	char* phoneNumber[13];
-	char* province[3];
-	char* city[61];
-	char* postalCode[8];
+	char  name[31];
+	char  street[61];
+	char  phoneNumber[13];
+	char  province[3];
+	char  city[61];
+	char  postalCode[8] ;
 }phoneBook;
 
 
@@ -47,13 +47,13 @@ typedef struct phoneBook
 
 
 /*PROTOTYPES*/
-bool validateName();
-bool validatePhoneNumber();
+bool validateName(struct phoneBook *newPerson);
+bool validatePhoneNumber(struct phoneBook *newPerson);
 
-bool provinceValidation();
-bool cityValidation();
-bool postalCode();
-bool streetAddress();
+bool provinceValidation(struct phoneBook *newPerson);
+bool cityValidation(struct phoneBook *newPerson);
+bool postalCode(struct phoneBook *newPerson);
+bool streetAddress(struct phoneBook *newPerson);
 
 void getInput(char* firstName, char* secondName, char* province, char* postalCode, char* streetAddress);
 void clearCRLF(char *str);
