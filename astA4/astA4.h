@@ -35,6 +35,7 @@ typedef struct phoneBook
 #define kCurly2  ')'
 #define kValid 1
 #define kInvalid -1
+#define kFOUNDNONE 0
 
 #define provinceNumber 13
 #define provinceCodeLength 2

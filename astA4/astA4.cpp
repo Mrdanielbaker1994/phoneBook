@@ -24,17 +24,21 @@ int main()
 		//functions shall call the next function once in updates phonebook
 		// For now I'm having function calls in main just to make it easier on us
 		// for debugging purposes.
-		//programFlow = validateName(newPerson);
-		//programFlow = validateName(newPerson);
-		//programFlow = streetAddress(newPerson);
-		//programFlow = cityValidation(newPerson);
+
+		programFlow = validateName(newPerson);
+		programFlow = cityValidation(newPerson);
 		programFlow = provinceValidation(newPerson);
-		//programFlow = postalCode(newPerson);
+		programFlow = postalCode(newPerson);
 		//programFlow = validatePhoneNumber(newPerson);
+		//programFlow = streetAddress(newPerson);
+
+		printf("Printing Phone Book \n");
+		printf("name %s      city %s          province %s       postal code %s", newPerson->name, newPerson->city, 
+		newPerson->province, newPerson->postalCode);
+
 
 		i++;
 	}
-
 
 //Before I start making major changes this is my thought.
 //Our while loop, loops as long as i < 10 and program flow does not equal false.

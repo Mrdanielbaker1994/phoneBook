@@ -91,6 +91,14 @@ bool validateName(struct phoneBook *newPerson)
 
 								if (checkParsed == validateFirstName) //comparing the size of the string before it is parsed by sscanf and then after it - if same same sscanf didn't find invalid characters
 								{
+									strcpy(newPerson->name, storeFirstName);
+									strcat(newPerson->name, " ");
+									strcat(newPerson->name, storeSecondName);
+
+
+
+									//////////////////////////////////////
+
 									printf("Your first name is [ %s ]\n", storeFirstName); //print the first name
 									printf("Your last name is [ %s ]\n", storeSecondName); //print the second name
 									returnValue = true; //the has not trolled us so far - we can return true :)
@@ -250,7 +258,8 @@ bool cityValidation(struct phoneBook *newPerson)
 				parsedLength = strlen(cityPrint);
 				if (parsedLength == userPassedLength)
 				{
-					printf("%s", cityPrint);
+					//printf("%s", cityPrint);
+					strcpy(newPerson->city, cityPassed);
 					retValue = true;
 				}
 				else
@@ -292,18 +301,18 @@ bool provinceValidation(struct phoneBook *newPerson)
 	char provinceCodes[provinceNumber][provinceCodeLength + 1]
 	{
 		{ "AB" },
-	{ "BC" },
-	{ "MB" },
-	{ "NB" },
-	{ "NL" },
-	{ "NS" },
-	{ "NT" },
-	{ "NU" },
-	{ "ON" },
-	{ "PE" },
-	{ "QC" },
-	{ "SK" },
-	{ "YT" }
+		{ "BC" },
+		{ "MB" },
+		{ "NB" },
+		{ "NL" },
+		{ "NS" },
+		{ "NT" },
+		{ "NU" },
+		{ "ON" },
+		{ "PE" },
+		{ "QC" },
+		{ "SK" },
+		{ "YT" }
 	};
 	char provinceNames[provinceNumber][provinceNameLength]
 	{
@@ -405,21 +414,24 @@ bool postalCode(struct phoneBook *newPerson)
 			// check for characters at correct positions
 			if (sscanf(postalPassed, "%c %c %c", &junkArray[0], &junkArray[2], &junkArray[5]) == 3)
 			{
-				//check for decimal at correct positions
-				if (sscanf(postalPassed, "%d %d %d", &junkArrayInt[1], &junkArrayInt[4], &junkArrayInt[6]) == 3)
-				{
+
+				//
+				//must check for decimal at correct positions.
+				//
 					//check for unacceptable postal letters
-					if (sscanf(postalPassed, "%[^OQUDFIoqudfi]", &postalParsed) == 1)
+					
+					if (sscanf(postalPassed, "%[^OQUDFIoqudfi\\]", &postalParsed) == 1)
 					{
 						parsedPostalLength = strlen(postalParsed);
 
 						if (parsedPostalLength == postalCodeLength)
 						{
 							//check for unnaceptable postal letters at index 0
-							oneCharacter = &postalParsed[0];
-							if (*oneCharacter != 'W' && *oneCharacter != 'Z' && *oneCharacter != 'w' && *oneCharacter != 'z')
+							char* firstCharacter = &postalParsed[0];
+							if (*firstCharacter != 'W' && *firstCharacter != 'Z' && *firstCharacter != 'w' && *firstCharacter != 'z')
 							{
-								printf("my postal code %s \n", postalParsed);
+								//printf("my postal code %s \n", postalParsed);
+								strcpy(newPerson->postalCode, postalParsed);
 								retValue = true;
 							}
 							else
@@ -439,7 +451,7 @@ bool postalCode(struct phoneBook *newPerson)
 						printf("ERROR:You have entered an invalid character \n");
 						retValue = false;
 					}
-				}
+				
 
 			}
 		}
