@@ -25,16 +25,16 @@ int main()
 		// For now I'm having function calls in main just to make it easier on us
 		// for debugging purposes.
 
-		programFlow = validateName(newPerson);
-		programFlow = cityValidation(newPerson);
-		programFlow = provinceValidation(newPerson);
-		programFlow = postalCode(newPerson);
+		//programFlow = validateName(newPerson);
+		//programFlow = cityValidation(newPerson);
+		//programFlow = provinceValidation(newPerson);
+		//programFlow = postalCode(newPerson);
 		//programFlow = validatePhoneNumber(newPerson);
 		//programFlow = streetAddress(newPerson);
 
-		printf("Printing Phone Book \n");
-		printf("name %s      city %s          province %s       postal code %s", newPerson->name, newPerson->city, 
-		newPerson->province, newPerson->postalCode);
+		//printf("Printing Phone Book \n");
+		//printf("name %s      city %s          province %s       postal code %s", newPerson->name, newPerson->city, 
+		//newPerson->province, newPerson->postalCode);
 
 
 		i++;

@@ -414,12 +414,18 @@ bool postalCode(struct phoneBook *newPerson)
 			// check for characters at correct positions
 			if (sscanf(postalPassed, "%c %c %c", &junkArray[0], &junkArray[2], &junkArray[5]) == 3)
 			{
+				char* checkDigit = postalPassed;
+				if (isdigit(checkDigit[1]) && isdigit(checkDigit[4]) && isdigit(checkDigit[6]))
+				{
 
-				//
-				//must check for decimal at correct positions.
-				//
-					//check for unacceptable postal letters
-					
+
+
+
+					//
+					//must check for decimal at correct positions.
+					//
+						//check for unacceptable postal letters
+
 					if (sscanf(postalPassed, "%[^OQUDFIoqudfi\\]", &postalParsed) == 1)
 					{
 						parsedPostalLength = strlen(postalParsed);
@@ -451,8 +457,12 @@ bool postalCode(struct phoneBook *newPerson)
 						printf("ERROR:You have entered an invalid character \n");
 						retValue = false;
 					}
-				
 
+				}
+				else
+				{
+					printf("You have entered a non-number  at this position.");
+				}
 			}
 		}
 		else
