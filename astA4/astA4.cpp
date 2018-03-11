@@ -21,8 +21,17 @@ int main()
 	while (programFlow != false &&  i < maxEntries )
 	{
 		newPerson = &PhoneEntries[i];
-	
+		//functions shall call the next function once in updates phonebook
+		// For now I'm having function calls in main just to make it easier on us
+		// for debugging purposes.
 		programFlow = validateName(newPerson);
+		programFlow = validateName(newPerson);
+		programFlow = streetAddress(newPerson);
+		programFlow = cityValidation(newPerson);
+		programFlow = provinceValidation(newPerson);
+		programFlow = postalCode(newPerson);
+		programFlow = validatePhoneNumber(newPerson);
+
 		i++;
 	}
 
@@ -41,12 +50,12 @@ int main()
 	//please unomment the function call you want to test 
 
 
-	//programFlow = validateName();
-	//programFlow = streetAddress();
-	//programFlow = cityValidation();
-	//programFlow = provinceValidation();
-	//programFlow = postalCode();
-	//programFlow = validatePhoneNumber();
+	
+	
+	
+	
+	
+	
 
 
 
