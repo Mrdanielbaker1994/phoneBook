@@ -16,12 +16,12 @@ Description:
 /*STUCTS*/
 typedef struct phoneBook
 {
-	char name[31];
-	char street[61];
-	char phoneNumber[13];
-	char province[3];
-	char city[61];
-	char postalCode[8];
+	char* name[31];
+	char* street[61];
+	char* phoneNumber[13];
+	char* province[3];
+	char* city[61];
+	char* postalCode[8];
 }phoneBook;
 
 
@@ -43,6 +43,7 @@ typedef struct phoneBook
 #define kMaxStreetLength 61
 #define maxLength 100
 #define postalCodeLength 7
+#define maxEntries 10
 
 
 /*PROTOTYPES*/
